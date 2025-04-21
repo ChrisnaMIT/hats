@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MaterialController!{% endblock %}
+{% form_theme formMat 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mat in materials %}
+            <tr>
+                <td>{{ mat.id }}</td>
+                <td>{{ mat.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ form(formMat) }}
+{% endblock %}
